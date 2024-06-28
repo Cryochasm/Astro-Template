@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
-import Grid from '../components/Grid.astro';
-import FriendsPreview from '../components/FriendsPreview.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+import FriendsPreview from "../components/FriendsPreview.astro";
 
-const projects = (await getCollection('astro-friendslist')).sort(
-	(a, b) => b.data.title.valueOf() - a.data.title.valueOf()
+const projects = (await getCollection("astro-friendslist")).sort(
+	(a, b) => b.data.title.valueOf() - a.data.title.valueOf(),
 );
 ---
 
