@@ -17,7 +17,9 @@ const { data, slug } = Astro.props.project;
 		decoding="async"
 	/>
 	<div class="description">{data.description}</div>
-	<div class="date">{data.eventDate}</div>
+	<div class="date">{data.eventDate}
+		<p>{data.eventTime}</p>
+	</div>
 	<div class="location">{data.eventLocation}</div>
 </a>
 

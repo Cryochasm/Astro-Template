@@ -9,7 +9,7 @@ import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
 
 const projects = (await getCollection("events")).sort(
-	(a, b) => a.data.eventDate.valueOf() - b.data.eventDate.valueOf(),
+	(a, b) => a.data.sortDate.valueOf() - b.data.sortDate.valueOf(),
 );
 ---
 

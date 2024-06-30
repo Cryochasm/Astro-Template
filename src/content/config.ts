@@ -30,7 +30,9 @@ export const collections = {
 			description: z.string(),
 			img: z.string(),
 			img_alt: z.string().optional(),
+			sortDate: z.coerce.date(),
 			eventDate: z.string(),
+			eventTime: z.string(),
 			eventLocation: z.string(),
 		}),
 
