@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <BaseLayout title="Contact | CHANGEME" description="Contact CHANGEME">
@@ -10,7 +11,7 @@ import Hero from "../components/Hero.astro";
 		<main class="wrapper about">
 			<Hero
 				title="Contact"
-				tagline="Here is a few ways we can get in touch."
+				tagline="Here are a few ways we can get in touch."
 			>
 				<img
 					width="775"
@@ -21,10 +22,18 @@ import Hero from "../components/Hero.astro";
 			</Hero>
 
 			<section>
-				<h2 class="section-title">e-mail</h2>
+				<h2 class="section-title">E-Mail</h2>
 				<div class="content">
 					<p>
-						<a href="mailto:me@CHANGEME.com">me@CHANGEME.com</a>
+						<a href="mailto:me@CHANGEME.com">
+							<Icon
+								icon="envelope-simple"
+								color="var(--accent-regular)"
+								size="2rem"
+								gradient
+							/>
+							me@CHANGEME.com</a
+						>
 					</p>
 				</div>
 			</section>
@@ -32,28 +41,58 @@ import Hero from "../components/Hero.astro";
 				<h2 class="section-title">Social Media</h2>
 				<div class="content">
 					<p>
-						<a href="https://www.facebook.com/CHANGEME"
-							>CHANGEME @ Facebook</a
+						<a href="https://www.facebook.com/CHANGEME">
+							<Icon
+								icon="facebook-logo"
+								color="var(--accent-regular)"
+								size="2rem"
+								gradient
+							/>
+							CHANGEME @ Facebook</a
 						>
 					</p>
 					<p>
-						<a href="https://www.instagram.com/CHANGEME"
-							>CHANGEME @ Instagram</a
+						<a href="https://www.instagram.com/CHANGEME">
+							<Icon
+								icon="instagram-logo"
+								color="var(--accent-regular)"
+								size="2rem"
+								gradient
+							/>
+							CHANGEME @ Instagram</a
 						>
 					</p>
 					<p>
-						<a href="https://www.x.com/CHANGEME"
-							>CHANGEME @ X</a
+						<a href="https://www.x.com/CHANGEME">
+							<Icon
+								icon="linktree-logo"
+								color="var(--accent-regular)"
+								size="2rem"
+								gradient
+							/>
+							CHANGEME @ LinkTree</a
 						>
 					</p>
 					<p>
-						<a href="https://www.youtube.com/CHANGEME"
-							>CHANGEME @ YouTube</a
+						<a href="https://www.youtube.com/CHANGEME">
+							<Icon
+								icon="youtube-logo"
+								color="var(--accent-regular)"
+								size="2rem"
+								gradient
+							/>
+							CHANGEME @ YouTube</a
 						>
 					</p>
 					<p>
-						<a href="https://www.linkedin.com/CHANGEME"
-							>CHANGEME @ LinkedIn</a
+						<a href="https://www.linkedin.com/CHANGEME">
+							<Icon
+								icon="linkedin-logo"
+								color="var(--accent-regular)"
+								size="2rem"
+								gradient
+							/>
+							CHANGEME @ LinkedIn</a
 						>
 					</p>
 				</div>
