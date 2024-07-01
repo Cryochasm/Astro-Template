@@ -63,9 +63,7 @@ const projects = (await getCollection("blog"))
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Latest Blog</h3>
-					<p>
-						Take a look below at some of my lastest blog posts.
-					</p>
+					<p>Take a look below at some of my latest blog posts.</p>
 				</header>
 
 				<div class="gallery">
@@ -90,28 +88,42 @@ const projects = (await getCollection("blog"))
 
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
+					<h3>Testimonials</h3>
 					<p>
-						I have been fortunate enough to receive praise for my
-						work in several publications. Take a look below to learn
-						more.
+						I have been fortunate enough work with some amazing
+						people. Take a look below to see what they have to say.
 					</p>
 				</header>
 
 				<div class="gallery">
-					<Grid variant="small">
+					<Grid variant="testimonial">
 						{
-							[
-								"Medium",
-								"BuzzFeed",
-								"The Next Web",
-								"awwwards.",
-								"TechCrunch",
-							].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
+							(
+								<>
+									<div class="testimonial-card">
+										<section>
+											Lorem ipsum dolor sit amet,
+											consectetur adipiscing elit.
+											Curabitur posuere commodo venenatis.
+											Pellentesque habitant morbi
+											tristique senectus et netus et
+											malesuada fames ac turpis egestas.
+											<hr />
+											Jane Doe
+										</section>
+									</div>
+									<div class="testimonial-card">
+										<section>
+											Nam non ligula vel metus efficitur
+											hendrerit. In hac habitasse platea
+											dictumst. Praesent et mauris ut mi
+											dapibus semper.
+											<hr />
+											John Smith
+										</section>
+									</div>
+								</>
+							)
 						}
 					</Grid>
 				</div>
@@ -254,6 +266,20 @@ const projects = (await getCollection("blog"))
 		text-align: center;
 		border: 1px solid var(--gray-800);
 		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.testimonial-card {
+		display: flex;
+		height: auto;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		padding: 2rem;
 		color: var(--gray-300);
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);

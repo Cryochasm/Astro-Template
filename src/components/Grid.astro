@@ -1,6 +1,6 @@
 ---
 interface Props {
-	variant?: "offset" | "small" | "list";
+	variant?: "offset" | "small" | "list" | "testimonial";
 }
 
 const { variant } = Astro.props;
@@ -13,6 +13,7 @@ const { variant } = Astro.props;
 			offset: variant === "offset",
 			small: variant === "small",
 			list: variant === "list",
+			testimonial: variant === "testimonial",
 		},
 	]}
 >
@@ -40,6 +41,10 @@ const { variant } = Astro.props;
 
 	.grid.list {
 		grid-template-columns: 1fr;
+	}
+
+	.grid.testimonial {
+		grid-column: 1fr 1fr;
 	}
 
 	@media (min-width: 50em) {

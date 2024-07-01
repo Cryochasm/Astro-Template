@@ -14,7 +14,7 @@ eventLocation: Zoom
 Virtual chat
 
 ## Where
-Zoom
+Zoom  
 [Zoom Meeting Link](https://www.zoom.com)
 
 ## When
