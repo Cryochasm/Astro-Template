@@ -1,0 +1,3 @@
+[submodule "src/content/Astro-FriendsList"]
+	path = src/content/Astro-FriendsList
+	url = https://github.com/Cryochasm/Astro-FriendsList.git
