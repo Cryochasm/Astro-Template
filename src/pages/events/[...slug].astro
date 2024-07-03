@@ -8,9 +8,12 @@ import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
 import Pill from "../../components/Pill.astro";
 
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 interface Props {
 	entry: CollectionEntry<"events">;
 }
+
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 // Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
@@ -25,6 +28,15 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/*.{jpeg,jpg,png,gif}",
+);
+
+if (!images[entry.data.img])
+	throw new Error(
+		`"${entry.data.img}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`,
+	);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
@@ -46,8 +58,8 @@ const { Content } = await entry.render();
 				<div class="stack gap-10 content">
 					{
 						entry.data.img && (
-							<img
-								src={entry.data.img}
+							<Image
+								src={images[entry.data.img]()}
 								alt={entry.data.img_alt || ""}
 							/>
 						)

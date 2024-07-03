@@ -7,6 +7,9 @@ import ContactCTA from "../../components/ContactCTA.astro";
 import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
 
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
 interface Props {
 	entry: CollectionEntry<"Astro-FriendsList">;
 }
@@ -24,6 +27,15 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/content/Astro-FriendsList/assets/*.{jpeg,jpg,png,gif,webp}",
+);
+
+if (!images[entry.data.img])
+	throw new Error(
+		`"${entry.data.img}" does not exist in glob: "Astro-FriendsList"`,
+	);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
@@ -45,8 +57,8 @@ const { Content } = await entry.render();
 				<div class="stack gap-10 content">
 					{
 						entry.data.img && (
-							<img
-								src={entry.data.img}
+							<Image
+								src={images[entry.data.img]()}
 								alt={entry.data.img_alt || ""}
 							/>
 						)
