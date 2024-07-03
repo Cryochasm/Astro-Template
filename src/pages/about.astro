@@ -1,4 +1,7 @@
 ---
+import { Image } from "astro:assets";
+import aboutPicImage from "/src/assets/group-pic.png"
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
@@ -12,10 +15,10 @@ import Hero from "../components/Hero.astro";
 				title="About"
 				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
 			>
-				<img
+				<Image
 					width="1553"
 					height="873"
-					src="/src/assets/group-pic.png"
+					src={aboutPicImage}
 					alt="CHANGEME Pic description"
 				/>
 			</Hero>
