@@ -26,7 +26,8 @@ if (!images[data.img])
 		decoding="async"
 	/>
 	<div class="description">{data.description}</div>
-	<div class="date">{data.eventDate}
+	<div class="date">
+		{data.eventDate}
 		<p>{data.eventTime}</p>
 	</div>
 	<div class="location">{data.eventLocation}</div>
@@ -35,12 +36,15 @@ if (!images[data.img])
 <style>
 	.list {
 		display: grid;
-		grid-template-columns: 20% 50% 30%;
-		grid-template-rows: 50% 50%;
+		grid-template-columns: 100%;
+		grid-template-rows: auto;
 		grid-template-areas:
-			"img title date"
-			"img description location";
-		height: 14rem;
+			"img "
+			"title"
+			"description"
+			"date"
+			"location";
+		height: auto;
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
@@ -109,6 +113,15 @@ if (!images[data.img])
 		.card {
 			height: 22rem;
 			border-radius: 1.5rem;
+		}
+
+		.list {
+			grid-template-columns: 20% 50% 30%;
+			grid-template-rows: 50% 50%;
+			grid-template-areas:
+				"img title date"
+				"img description location";
+			height: 14rem;
 		}
 
 		.title {
