@@ -1,4 +1,3 @@
-[submodule "/home/levi/git_repos/Astro-Template/src/content/astro-friendslist"]
-	path = /home/levi/git_repos/Astro-Template/src/content/astro-friendslist
+[submodule "src/content/Astro-FriendsList"]
+	path = src/content/Astro-FriendsList
 	url = https://github.com/Cryochasm/Astro-FriendsList.git
-	branch = main

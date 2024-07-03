@@ -8,14 +8,14 @@ import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
 
 interface Props {
-	entry: CollectionEntry<"astro-friendslist">;
+	entry: CollectionEntry<"Astro-FriendsList">;
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 // Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
-	const work = await getCollection("astro-friendslist");
+	const work = await getCollection("Astro-FriendsList");
 	return work.map((entry) => ({
 		params: { slug: entry.slug },
 		props: { entry },
