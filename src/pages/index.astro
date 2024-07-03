@@ -1,5 +1,7 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import profilePicImage from "/src/assets/profile-pic.png"
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -48,11 +50,11 @@ const projects = (await getCollection("blog"))
 					</div>
 				</Hero>
 
-				<img
+				<Image
 					alt="CHANGEME portrait description"
 					width="480"
 					height="620"
-					src="/src/assets/profile-pic.png"
+					src={profilePicImage}
 				/>
 			</header>
 

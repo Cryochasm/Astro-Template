@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import profilePicImage from "/src/assets/profile-pic.png"
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
@@ -13,10 +15,10 @@ import Icon from "../components/Icon.astro";
 				title="Contact"
 				tagline="Here are a few ways we can get in touch."
 			>
-				<img
+				<Image
 					width="775"
 					height="775"
-					src="/src/assets/profile-pic.png"
+					src={profilePicImage}
 					alt="CHANGEME Pic description"
 				/>
 			</Hero>

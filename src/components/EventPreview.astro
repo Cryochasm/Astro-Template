@@ -1,23 +1,33 @@
 ---
 import type { CollectionEntry } from "astro:content";
-
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 interface Props {
 	project: CollectionEntry<"events">;
 }
 
 const { data, slug } = Astro.props.project;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/*.{jpeg,jpg,png,gif}",
+);
+
+if (!images[data.img])
+	throw new Error(
+		`"${data.img}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`,
+	);
 ---
 
 <a class="list" href={`/events/${slug}`}>
 	<div class="title">{data.title}</div>
-	<img
-		src={data.img}
+	<Image
+		src={images[data.img]()}
 		alt={data.img_alt || ""}
 		loading="lazy"
 		decoding="async"
 	/>
 	<div class="description">{data.description}</div>
-	<div class="date">{data.eventDate}
+	<div class="date">
+		{data.eventDate}
 		<p>{data.eventTime}</p>
 	</div>
 	<div class="location">{data.eventLocation}</div>
@@ -26,12 +36,15 @@ const { data, slug } = Astro.props.project;
 <style>
 	.list {
 		display: grid;
-		grid-template-columns: 20% 50% 30%;
-		grid-template-rows: 50% 50%;
+		grid-template-columns: 100%;
+		grid-template-rows: auto;
 		grid-template-areas:
-			"img title date"
-			"img description location";
-		height: 14rem;
+			"img "
+			"title"
+			"description"
+			"date"
+			"location";
+		height: auto;
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
@@ -100,6 +113,15 @@ const { data, slug } = Astro.props.project;
 		.card {
 			height: 22rem;
 			border-radius: 1.5rem;
+		}
+
+		.list {
+			grid-template-columns: 20% 50% 30%;
+			grid-template-rows: 50% 50%;
+			grid-template-areas:
+				"img title date"
+				"img description location";
+			height: 14rem;
 		}
 
 		.title {
