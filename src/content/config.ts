@@ -13,7 +13,7 @@ export const collections = {
 		}),
 
 	}),
-	friends: defineCollection({
+	soulpreneurs: defineCollection({
 		type: 'content',
 		schema: z.object({
 			title: z.string(),
