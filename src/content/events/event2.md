@@ -9,7 +9,7 @@ eventDate: May 24, 2024
 eventTime: 7:00 PM MDT
 eventLocation: Zoom
 ---
-# Mountain Meetup Event
+# Zoom Meetup Event
 ## What
 Virtual chat
 

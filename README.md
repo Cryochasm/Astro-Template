@@ -2,11 +2,12 @@
 
 Clone with submodules:
 ```sh
-git clone --recurse-submodules https://github.com/Cryochasm/Astro-Template
+git clone --recurse-submodules https://github.com/Cryochasm/Astro-Template <Your-Website-Name>
 ```
 
 The run this to install the Astro dependencies:
 ```sh
+cd <Your-Website-Name>
 npm install astro
 ```
 
