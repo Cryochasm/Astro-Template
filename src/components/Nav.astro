@@ -1,17 +1,16 @@
 ---
 import Icon from "./Icon.astro";
-import ThemeToggle from "./ThemeToggle.astro";
 import type { iconPaths } from "./IconPaths";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
 	{ label: "Home", href: "/" },
 	{ label: "Blog", href: "/blog/" },
-	{ label: "Events", href: "/events/"},
-	{ label: "Offers", href: "/offers/"},
+	{ label: "Events", href: "/events/" },
+	{ label: "Offers", href: "/offers/" },
 	{ label: "Soulpreneurs", href: "/soulpreneurs/" },
 	{ label: "About", href: "/about/" },
-	{ label: "Contact", href: "/contact/"},
+	{ label: "Contact", href: "/contact/" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -140,10 +139,6 @@ const iconLinks: {
 						</a>
 					))
 				}
-			</div>
-
-			<div class="theme-toggle">
-				<ThemeToggle />
 			</div>
 		</div>
 	</div>
