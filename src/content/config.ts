@@ -13,16 +13,6 @@ export const collections = {
 		}),
 
 	}),
-	soulpreneurs: defineCollection({
-		type: 'content',
-		schema: z.object({
-			title: z.string(),
-			description: z.string(),
-			img: z.string(),
-			img_alt: z.string().optional(),
-		}),
-
-	}),
 	event: defineCollection({
 		type: 'content',
 		schema: z.object({
